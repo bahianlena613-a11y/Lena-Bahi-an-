@@ -1,362 +1,313 @@
-<!DOCTYPE html>  <html lang="en">    <head>        <meta charset="UTF-8">          <meta name="viewport" content="width=device-width, initial-scale=1.0">        
-  <title>Bahi-an Portfolio</title>  <style>    /* ===== GENERAL STYLES ===== */    
-html {    
-scroll-behavior: smooth;    
-}  body {  
-font-family: "Poppins", Arial, sans-serif;  
-background: linear-gradient(135deg, #f8bbd0 0%, #fce4ec 100%);  
-color: #333;  
-margin: 0;  
-padding: 0;  
-}  h1, h2 {
-color: #ad1457;
-text-align: center;
-margin-bottom: 10px;
-}
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Bahi-an Portfolio</title>  <style>  
+/* ===== GENERAL STYLES ===== */  
+html {  
+  scroll-behavior: smooth;  
+}  
+body {  
+  font-family: "Poppins", Arial, sans-serif;  
+  background: linear-gradient(135deg, #f8bbd0 0%, #fce4ec 100%);  
+  color: #333;  
+  margin: 0;  
+  padding: 0;  
+}  
+h1, h2 {  
+  color: #ad1457;  
+  text-align: center;  
+  margin-bottom: 10px;  
+}  
+p {  
+  line-height: 1.6;  
+}  
+  
+/* ===== HEADER ===== */  
+header {  
+  background: linear-gradient(90deg, #f06292, #ec407a);  
+  color: white;  
+  padding: 15px 0;  
+  text-align: center;  
+  position: sticky;  
+  top: 0;  
+  z-index: 1000;  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);  
+}  
+header h1 {  
+  margin: 5px 0;  
+  font-size: 34px;  
+  font-weight: 800;  
+}  
+  
+/* ===== NAVIGATION ===== */  
+nav {  
+  display: flex;  
+  justify-content: center;  
+  gap: 25px;  
+  flex-wrap: wrap;  
+}  
+nav a {  
+  color: white;  
+  text-decoration: none;  
+  font-weight: bold;  
+  padding: 6px 14px;  
+  border-radius: 25px;  
+  transition: 0.3s ease;  
+}  
+nav a:hover {  
+  background-color: white;  
+  color: #ad1457;  
+}  
+  
+/* ===== SECTIONS ===== */  
+section {  
+  width: 90%;  
+  max-width: 900px;  
+  margin: 40px auto;  
+  background-color: #fff;  
+  border-radius: 20px;  
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);  
+  padding: 30px;  
+}  
+  
+/* ===== PROFILE PICTURE ===== */  
+.profile-pic {  
+  display: flex;  
+  justify-content: center;  
+}  
+.profile-pic img {  
+  width: 180px;  
+  height: 180px;  
+  object-fit: cover;  
+  border-radius: 50%;  
+  border: 4px solid #f06292;  
+}  
+  
+/* ===== PROJECTS ===== */  
+.project-grid {  
+  display: flex;  
+  flex-wrap: wrap;  
+  justify-content: center;  
+  gap: 25px;  
+}  
+.project-item {  
+  text-align: center;  
+  background-color: #fce4ec;  
+  border-radius: 15px;  
+  padding: 15px;  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);  
+}  
+.project-item img {  
+  width: 280px;  
+  height: 190px;  
+  border-radius: 12px;  
+  object-fit: cover;  
+}  
+  
+/* ===== OTHER OUTPUTS (WITH ICONS) ===== */  
+.other-outputs {  
+  text-align: center;  
+  margin-top: 20px;  
+}  
+  
+.output-list {  
+  list-style: none;  
+  padding: 0;  
+  margin-top: 20px;  
+}  
+  
+.output-list li {  
+  font-size: 18px;  
+  margin-bottom: 12px;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  gap: 8px;  
+}  
+  
+.output-icon {  
+  font-size: 20px;  
+}  
+  
+/* ===== VIDEO SECTION ===== */  
+.video-grid {  
+  display: flex;  
+  flex-wrap: wrap;  
+  justify-content: center;  
+  gap: 20px;  
+}  
+.video-item iframe {  
+  width: 320px;  
+  height: 180px;  
+  border-radius: 20px;  
+}  
+  
+/* ===== CONTACT SECTION ===== */  
+.contact-card {  
+  background: white;  
+  border-radius: 20px;  
+  padding: 30px;  
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);  
+}  
+  
+.contact-card p {  
+  text-align: center;  
+  font-size: 16px;  
+  color: #444;  
+  margin-bottom: 25px;  
+}  
+  
+.contact-box {  
+  display: flex;  
+  align-items: center;  
+  background: #fff;  
+  border-radius: 15px;  
+  padding: 15px;  
+  margin-bottom: 15px;  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);  
+}  
+  
+.contact-icon {  
+  width: 45px;  
+  height: 45px;  
+  background: #f48fb1; /* light pink */  
+  color: white; /* icon color */  
+  border-radius: 50%;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  margin-right: 15px;  
+  font-size: 22px;  
+}  
+.contact-info b {  
+  font-size: 17px;  
+}  
+.work-btn {  
+  display: block;  
+  margin: 25px auto 0;  
+  background: #ec407a; /* medium pink */  
+  color: white;  
+  padding: 12px 25px;  
+  border-radius: 10px;  
+  font-size: 18px;  
+  width: 200px;  
+  text-align: center;  
+  cursor: pointer;  
+  border: none;  
+}  
+  
+.work-btn:hover {  
+  background: #d81b60; /* slightly darker on hover */  
+}  
+footer {  
+  text-align: center;  
+  padding: 20px;  
+  background: #f8bbd0;  
+}  
+</style>  </head>  <body>  <header>  
+  <nav>  
+    <a href="#home">Home</a>  
+    <a href="#about">About</a>  
+    <a href="#bestmoments">Best Moments</a>  
+    <a href="#projects">Projects</a>  
+    <a href="#Tutorials">Tutorials</a>  
+    <a href="#contact">Contact</a>  
+  </nav>  
+</header>  <section id="home">  
+  <div class="profile-pic">  
+    <img src="Cn.png">  
+  </div>  
+  <h2>Welcome to My Portfolio!</h2>  
+  <p style="text-align:center;">Crafting innovative solutions through design, code, and creativity.            
+    Welcome to a space where ideas turn into experience —            
+    a journey of learning, building, and growing.</p>  
+</section>  <section id="about">  
+  <h2>About me</h2>  
+  <p>I’m an Information Technology student with a passion for coding, problem-solving, and learning about emerging technologies.            
+    I’m currently building my skills in software development, web design, and cybersecurity.            
+    My goal is to grow as an IT professional and contribute to innovative tech projects that make an impact.</p>  
+</section>  <section id="bestmoments">  
+  <h2>Best Moments</h2>  
+  <div class="project-item">  
+    <img src="Fam.jpg">  
+    <img src="Fm.jpg">  
+    <p>Fam & Cousins Bonds</p>  
+  </div>  
+</section>  <section id="projects">  
+  <h2>Outputs</h2>    <div class="project-grid">  
+    <div class="project-item"><img src="Ss.jpg"><p>Banner</p></div>  
+    <div class="project-item"><img src="Ts.png"><p>T-Shirt Layout</p></div>  
+    <div class="project-item"><img src="Sh.png"><p>Chessboard</p></div>  
+  </div>    <h2>Other Outputs:</h2>  
+  <div class="other-outputs">  
+    <ul class="output-list">  <li>  
+    <span class="output-icon">📄</span>  
+    Canva Portfolio —  
+    <a href="https://www.canva.com/design/DAGvxBzvQtQ/4s8VArc0jbtKNpFQzud_eQ/edit?utm_content=DAGvxBzvQtQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Click Here</a>  
+  </li>  
 
-p {
-line-height: 1.6;
-}
+  <li>  
+    <span class="output-icon">💻</span>  
+    Figma Portfolio —  
+    <a href="https://www.figma.com/proto/EFpFv6BXGQiEexLU8lTreA/Portfolio?node-id=0-1&t=2OPX7AHWazTv1gjR-1">Click Here</a>  
+  </li>  
 
-/* ===== HEADER ===== */
-header {
-background: linear-gradient(90deg, #f06292, #ec407a);
-color: white;
-padding: 15px 0;
-text-align: center;
-position: sticky;
-top: 0;
-z-index: 1000;
-box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
+  <li>  
+    <span class="output-icon">🛒</span>  
+    Figma E-commerce —  
+    <a href="https://www.figma.com/proto/pe9XXHKs5KHZAAYDsCTJ9P/Untitled?node-id=0-1&t=UUU662vmuT5UBWaN-1">Click Here</a>  
+  </li>  
 
-header h1 {
-margin: 5px 0;
-font-size: 34px;
-font-weight: 800;
-letter-spacing: 1px;
-text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-}
+</ul>
 
-/* ===== NAVIGATION ===== */
-nav {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
-gap: 25px;
-margin-top: 8px;
-}
+  </div>  
+</section>  <section id="Tutorials">  
+  <h2>Video Tutorials</h2>  
+  <div class="video-grid">  
+    <div class="video-item"><iframe src="https://www.youtube.com/embed/jQ1sfKIl50E"></iframe></div>  
+    <div class="video-item"><iframe src="https://www.youtube.com/embed/jzWxBuvwuwQ"></iframe></div>  
+    <div class="video-item"><iframe src="https://www.youtube.com/embed/qwNbjGyhZ48"></iframe></div>  
+  </div>  
+</section>  <section id="contact">  
+  <h2>Contact</h2>    <div class="contact-card">  <p>Want to collaborate or see more work?<br>Reach out via email or socials.</p>  
 
-nav a {
-color: white;
-text-decoration: none;
-font-weight: bold;
-padding: 6px 14px;
-border-radius: 25px;
-transition: 0.3s ease;
-}
+<div class="contact-box">  
+  <div class="contact-icon">✉️</div>  
+  <div class="contact-info">  
+    <b>Email:</b><br>  
+    <span>lenabahian@gmail.com</span>  
+  </div>  
+</div>  
 
-nav a:hover {
-background-color: white;
-color: #ad1457;
-box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
+<div class="contact-box">  
+  <div class="contact-icon">🌐</div>  
+  <div class="contact-info">  
+    <b>GitHub:</b><br>  
+    <span>github.com/bahianlena613</span>  
+  </div>  
+</div>  
 
-/* ===== SECTIONS ===== */
-section {
-width: 90%;
-max-width: 900px;
-margin: 40px auto;
-background-color: #fff;
-border-radius: 20px;
-box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-padding: 30px;
-animation: fadeIn 0.8s ease-in-out;
-}
+<div class="contact-box">  
+  <div class="contact-icon">📘</div>  
+  <div class="contact-info">  
+    <b>Facebook:</b><br>  
+    <span>Lens Catacio Bahian</span>  
+  </div>  
+</div>  
 
-@keyframes fadeIn {
-from { opacity: 0; transform: translateY(15px); }
-to { opacity: 1; transform: translateY(0); }
-}
+<div class="contact-box">  
+  <div class="contact-icon">📞</div>  
+  <div class="contact-info">  
+    <b>Phone:</b><br>  
+    <span>+63 992 313 4253</span>  
+  </div>  
+</div>  
 
-hr {
-border: 1px solid #ad1457;
-width: 60%;
-margin: 20px auto;
-}
+<button class="work-btn">Work With Me</button>
 
-a {
-color: #1a0dab;
-font-weight: bold;
-text-decoration: underline;
-}
-
-/* ===== PROFILE PICTURE ===== */
-.profile-pic {
-display: flex;
-justify-content: center;
-align-items: center;
-margin-bottom: 20px;
-}
-
-.profile-pic img {
-width: 180px;
-height: 180px;
-object-fit: cover;
-border-radius: 50%;
-border: 4px solid #f06292;
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profile-pic img:hover {
-transform: scale(1.05);
-box-shadow: 0 6px 20px rgba(173, 20, 87, 0.4);
-}
-
-/* ===== PROJECTS SECTION ===== */
-.project-grid {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 25px;
-margin-top: 20px;
-}
-
-.project-item {
-text-align: center;
-background-color: #fce4ec;
-border-radius: 15px;
-padding: 15px;
-box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-item:hover {
-transform: scale(1.05);
-box-shadow: 0 6px 15px rgba(173, 20, 87, 0.3);
-}
-
-.project-item img {
-width: 280px;
-height: 190px;
-border-radius: 12px;
-border: 3px solid white;
-object-fit: cover;
-}
-
-.project-item p {
-font-size: 16px;
-font-weight: bold;
-color: #ad1457;
-margin-top: 10px;
-}
-
-/* ===== OTHER OUTPUTS (NEW STYLE) ===== */
-
-.other-outputs {
-text-align: center;
-margin-top: 20px;
-}
-
-.output-list {
-list-style: none;
-padding: 0;
-margin-top: 20px;
-}
-
-.output-list li {
-font-size: 18px;
-margin-bottom: 15px;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 8px;
-}
-
-.output-icon {
-font-size: 22px;
-}
-
-/* ===== VIDEO TUTORIALS ===== */
-.video-grid {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 20px;
-}
-
-.video-item {
-text-align: center;
-}
-
-.video-item iframe {
-width: 320px;
-height: 180px;
-border-radius: 20px;
-box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-transition: transform 0.3s ease;
-}
-
-.video-item iframe:hover {
-transform: scale(1.05);
-}
-
-.video-item p {
-font-size: 18px;
-font-weight: bold;
-color: #ad1457;
-margin-top: 10px;
-text-align: center;
-}
-
-/* ===== CONTACT FORM ===== */
-form {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 10px;
-}
-
-label {
-font-weight: bold;
-color: #ad1457;
-align-self: flex-start;
-margin-left: 10%;
-}
-
-textarea, input {
-width: 80%;
-border-radius: 10px;
-border: 1px solid #ccc;
-padding: 10px;
-font-size: 14px;
-resize: none;
-transition: 0.3s;
-font-family: "Poppins", sans-serif;
-}
-
-textarea:focus, input:focus {
-border-color: #e91e63;
-box-shadow: 0 0 8px rgba(233, 30, 99, 0.3);
-outline: none;
-}
-
-button {
-background-color: #e91e63;
-color: white;
-border: none;
-border-radius: 25px;
-padding: 12px 30px;
-cursor: pointer;
-font-size: 16px;
-font-weight: bold;
-transition: 0.3s;
-margin-top: 10px;
-}
-
-button:hover {
-background-color: #ad1457;
-box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-footer {
-text-align: center;
-color: #666;
-padding: 20px;
-font-size: 14px;
-background: #f8bbd0;
-border-top: 2px solid #f06292;
-}
-
-</style>  </head>
-
-<body>  <header>        
-  <nav>        
-    <a href="#home">Home</a>        
-    <a href="#about">About</a>        
-    <a href="#bestmoments">Best Moments</a>        
-    <a href="#projects">Projects</a>        
-    <a href="#Tutorials">Tutorials</a>        
-    <a href="#contact">Contact</a>        
-  </nav>        
-</header>  <section id="home">        
-  <div class="profile-pic">        
-    <img src="Cn.png" alt="Profile Picture">        
-  </div>        
-  <h2>Welcome to My Portfolio!</h2>        
-  <p style="text-align:center;">        
-    Crafting innovative solutions through design, code, and creativity.        
-    Welcome to a space where ideas turn into experience —        
-    a journey of learning, building, and growing.        
-  </p>        
-</section>  <section id="about">        
-  <h2>About Me</h2>        
-  <p>        
-    I’m an Information Technology student with a passion for coding, problem-solving, and learning about emerging technologies.        
-    I’m currently building my skills in software development, web design, and cybersecurity.        
-    My goal is to grow as an IT professional and contribute to innovative tech projects that make an impact.        
-  </p>        
-</section>  <!-- ===== BEST MOMENTS SECTION ===== -->  <section id="bestmoments">        
-  <h2>Best Moments</h2>    <div class="project-item">        
-    <img src="Fam.jpg" alt="Fam">        
-    <img src="Fm.jpg" alt="Family 2">        
-    <p>Fam & Cousins Bonds</p>        
-  </div>    <div class="project-item">        
-    <img src="Family.jpg" alt="Family">        
-    <p>My Family</p>        
-  </div>        
-</section>  <!-- ===== PROJECTS SECTION ===== -->  <section id="projects">        
-  <h2>Outputs</h2>        
-  <div class="project-grid">        
-    <div class="project-item">        
-      <img src="Ss.jpg" alt="Project 1">        
-      <p>Banner</p>        
-    </div>  <div class="project-item">        
-  <img src="Ts.png" alt="Project 2">        
-  <p>T-Shirt Layout</p>        
-</div>    <div class="project-item">        
-  <img src="Sh.png" alt="Project 3">        
-  <p>Chessboard</p>        
-</div>    </div>    <h2>Other Outputs:</h2>    <div class="other-outputs">        
-    <ul class="output-list">  <li>        
-    <span class="output-icon">📄</span>        
-    Canva Portfolio —         
-    <a href="https://www.canva.com/design/DAGvxBzvQtQ/4s8VArc0jbtKNpFQzud_eQ/edit?utm_content=DAGvxBzvQtQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">        
-      Click Here        
-    </a>        
-  </li>      <li>        
-    <span class="output-icon">💻</span>        
-    Figma Portfolio —         
-    <a href="https://www.figma.com/proto/EFpFv6BXGQiEexLU8lTreA/Portfolio?node-id=0-1&t=2OPX7AHWazTv1gjR-1">        
-      Click Here        
-    </a>        
-  </li>      <li>        
-    <span class="output-icon">🛒</span>        
-    Figma e-commerce —         
-    <a href="https://www.figma.com/proto/pe9XXHKs5KHZAAYDsCTJ9P/Untitled?node-id=0-1&t=UUU662vmuT5UBWaN-1">        
-      Click Here        
-    </a>        
-  </li>    </ul>    </div>  </section>  <!-- ===== TUTORIALS SECTION ===== -->  <section id="Tutorials">        
-  <h2>Videos Tutorials</h2>    <div class="video-grid">        
-    <div class="video-item">        
-      <iframe src="https://www.youtube.com/embed/jQ1sfKIl50E" title="Figma Tutorial" allowfullscreen></iframe>        
-      <p>Figma Tutorial</p>        
-    </div>  <div class="video-item">        
-  <iframe src="https://www.youtube.com/embed/jzWxBuvwuwQ" title="Canva Tutorial" allowfullscreen></iframe>        
-  <p>Canva Tutorial</p>        
-</div>    <div class="video-item">        
-  <iframe src="https://www.youtube.com/embed/qwNbjGyhZ48" title="Photoshop Tutorial" allowfullscreen></iframe>        
-  <p>Adobe Photoshop Tutorial</p>        
-</div>    </div>        
-</section>  <!-- ===== CONTACT SECTION ===== -->  <section id="contact">        
-  <h2>Contact Me</h2>    <form>        
-    <label for="firstname">First Name:</label>        
-    <input type="text" id="firstname" placeholder="Enter your first name">  <label for="lastname">Last Name:</label>        
-<input type="text" id="lastname" placeholder="Enter your first name">    <label for="email">Email:</label>    
-<input type="email" id="email" placeholder="Enter your email">  <label for="comments">Message:</label>  <textarea id="comments" rows="5" placeholder="Enter your message here..."></textarea>    <button type="submit">Submit</button>    </form>        </section>  <footer>        
-  <p>© 2025 <b>Bahi-an Portfolio</b> | BSIT-2B</p>        
-</footer>  </body>        
-</html>        
-      
+  </div>  
+</section>  <footer>  
+  <p>© 2025 <b>Bahi-an Portfolio</b> | BSIT-2B</p>  
+</footer>  </body>  
+</html>
