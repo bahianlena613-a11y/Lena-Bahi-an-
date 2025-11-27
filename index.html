@@ -1,313 +1,398 @@
-<!DOCTYPE html>  <html lang="en">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>Bahi-an Portfolio</title>  <style>  
-/* ===== GENERAL STYLES ===== */  
-html {  
-  scroll-behavior: smooth;  
-}  
-body {  
-  font-family: "Poppins", Arial, sans-serif;  
-  background: linear-gradient(135deg, #f8bbd0 0%, #fce4ec 100%);  
-  color: #333;  
-  margin: 0;  
-  padding: 0;  
-}  
-h1, h2 {  
-  color: #ad1457;  
-  text-align: center;  
-  margin-bottom: 10px;  
-}  
-p {  
-  line-height: 1.6;  
-}  
-  
-/* ===== HEADER ===== */  
-header {  
-  background: linear-gradient(90deg, #f06292, #ec407a);  
-  color: white;  
-  padding: 15px 0;  
-  text-align: center;  
-  position: sticky;  
-  top: 0;  
-  z-index: 1000;  
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);  
-}  
-header h1 {  
-  margin: 5px 0;  
-  font-size: 34px;  
-  font-weight: 800;  
-}  
-  
-/* ===== NAVIGATION ===== */  
-nav {  
-  display: flex;  
-  justify-content: center;  
-  gap: 25px;  
-  flex-wrap: wrap;  
-}  
-nav a {  
-  color: white;  
-  text-decoration: none;  
-  font-weight: bold;  
-  padding: 6px 14px;  
-  border-radius: 25px;  
-  transition: 0.3s ease;  
-}  
-nav a:hover {  
-  background-color: white;  
-  color: #ad1457;  
-}  
-  
-/* ===== SECTIONS ===== */  
-section {  
-  width: 90%;  
-  max-width: 900px;  
-  margin: 40px auto;  
-  background-color: #fff;  
-  border-radius: 20px;  
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);  
-  padding: 30px;  
-}  
-  
-/* ===== PROFILE PICTURE ===== */  
-.profile-pic {  
-  display: flex;  
-  justify-content: center;  
-}  
-.profile-pic img {  
-  width: 180px;  
-  height: 180px;  
-  object-fit: cover;  
-  border-radius: 50%;  
-  border: 4px solid #f06292;  
-}  
-  
-/* ===== PROJECTS ===== */  
-.project-grid {  
-  display: flex;  
-  flex-wrap: wrap;  
-  justify-content: center;  
-  gap: 25px;  
-}  
-.project-item {  
-  text-align: center;  
-  background-color: #fce4ec;  
-  border-radius: 15px;  
-  padding: 15px;  
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);  
-}  
-.project-item img {  
-  width: 280px;  
-  height: 190px;  
-  border-radius: 12px;  
-  object-fit: cover;  
-}  
-  
-/* ===== OTHER OUTPUTS (WITH ICONS) ===== */  
-.other-outputs {  
-  text-align: center;  
-  margin-top: 20px;  
-}  
-  
-.output-list {  
-  list-style: none;  
-  padding: 0;  
-  margin-top: 20px;  
-}  
-  
-.output-list li {  
-  font-size: 18px;  
-  margin-bottom: 12px;  
-  display: flex;  
-  justify-content: center;  
-  align-items: center;  
-  gap: 8px;  
-}  
-  
-.output-icon {  
-  font-size: 20px;  
-}  
-  
-/* ===== VIDEO SECTION ===== */  
-.video-grid {  
-  display: flex;  
-  flex-wrap: wrap;  
-  justify-content: center;  
-  gap: 20px;  
-}  
-.video-item iframe {  
-  width: 320px;  
-  height: 180px;  
-  border-radius: 20px;  
-}  
-  
-/* ===== CONTACT SECTION ===== */  
-.contact-card {  
-  background: white;  
-  border-radius: 20px;  
-  padding: 30px;  
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);  
-}  
-  
-.contact-card p {  
-  text-align: center;  
-  font-size: 16px;  
-  color: #444;  
-  margin-bottom: 25px;  
-}  
-  
-.contact-box {  
-  display: flex;  
-  align-items: center;  
-  background: #fff;  
-  border-radius: 15px;  
-  padding: 15px;  
-  margin-bottom: 15px;  
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);  
-}  
-  
-.contact-icon {  
-  width: 45px;  
-  height: 45px;  
-  background: #f48fb1; /* light pink */  
-  color: white; /* icon color */  
-  border-radius: 50%;  
-  display: flex;  
-  justify-content: center;  
-  align-items: center;  
-  margin-right: 15px;  
-  font-size: 22px;  
-}  
-.contact-info b {  
-  font-size: 17px;  
-}  
-.work-btn {  
-  display: block;  
-  margin: 25px auto 0;  
-  background: #ec407a; /* medium pink */  
-  color: white;  
-  padding: 12px 25px;  
-  border-radius: 10px;  
-  font-size: 18px;  
-  width: 200px;  
-  text-align: center;  
-  cursor: pointer;  
-  border: none;  
-}  
-  
-.work-btn:hover {  
-  background: #d81b60; /* slightly darker on hover */  
-}  
-footer {  
-  text-align: center;  
-  padding: 20px;  
-  background: #f8bbd0;  
-}  
-</style>  </head>  <body>  <header>  
-  <nav>  
-    <a href="#home">Home</a>  
-    <a href="#about">About</a>  
-    <a href="#bestmoments">Best Moments</a>  
-    <a href="#projects">Projects</a>  
-    <a href="#Tutorials">Tutorials</a>  
-    <a href="#contact">Contact</a>  
-  </nav>  
-</header>  <section id="home">  
-  <div class="profile-pic">  
-    <img src="Cn.png">  
-  </div>  
-  <h2>Welcome to My Portfolio!</h2>  
-  <p style="text-align:center;">Crafting innovative solutions through design, code, and creativity.            
-    Welcome to a space where ideas turn into experience —            
-    a journey of learning, building, and growing.</p>  
-</section>  <section id="about">  
-  <h2>About me</h2>  
-  <p>I’m an Information Technology student with a passion for coding, problem-solving, and learning about emerging technologies.            
-    I’m currently building my skills in software development, web design, and cybersecurity.            
-    My goal is to grow as an IT professional and contribute to innovative tech projects that make an impact.</p>  
-</section>  <section id="bestmoments">  
-  <h2>Best Moments</h2>  
-  <div class="project-item">  
-    <img src="Fam.jpg">  
-    <img src="Fm.jpg">  
-    <p>Fam & Cousins Bonds</p>  
-  </div>  
-</section>  <section id="projects">  
-  <h2>Outputs</h2>    <div class="project-grid">  
-    <div class="project-item"><img src="Ss.jpg"><p>Banner</p></div>  
-    <div class="project-item"><img src="Ts.png"><p>T-Shirt Layout</p></div>  
-    <div class="project-item"><img src="Sh.png"><p>Chessboard</p></div>  
-  </div>    <h2>Other Outputs:</h2>  
-  <div class="other-outputs">  
-    <ul class="output-list">  <li>  
-    <span class="output-icon">📄</span>  
-    Canva Portfolio —  
-    <a href="https://www.canva.com/design/DAGvxBzvQtQ/4s8VArc0jbtKNpFQzud_eQ/edit?utm_content=DAGvxBzvQtQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Click Here</a>  
-  </li>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahi-an Portfolio</title>
+    <style>
+        /* ===== GENERAL STYLES ===== */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            background: linear-gradient(135deg, #f8bbd0 0%, #fce4ec 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 { color: #ad1457; text-align: center; margin-bottom: 10px; }
+        p { line-height: 1.6; }
 
-  <li>  
-    <span class="output-icon">💻</span>  
-    Figma Portfolio —  
-    <a href="https://www.figma.com/proto/EFpFv6BXGQiEexLU8lTreA/Portfolio?node-id=0-1&t=2OPX7AHWazTv1gjR-1">Click Here</a>  
-  </li>  
+        /* ===== HEADER / NAVIGATION (IMPROVED & BOLDER) ===== */
+        header {
+            background: linear-gradient(90deg, #f06292, #ec407a);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            /* IMPROVED: Mas malaking shadow para mag-float */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+        }
+        header h1 { margin: 5px 0; font-size: 34px; font-weight: 800; }
 
-  <li>  
-    <span class="output-icon">🛒</span>  
-    Figma E-commerce —  
-    <a href="https://www.figma.com/proto/pe9XXHKs5KHZAAYDsCTJ9P/Untitled?node-id=0-1&t=UUU662vmuT5UBWaN-1">Click Here</a>  
-  </li>  
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Mas malaking space sa pagitan ng links */
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            /* BINAGO: Ginawang 800 (Extra Bold) para mas matingkad */
+            font-weight: 800; 
+            padding: 8px 16px; /* Mas malaking padding */
+            border-radius: 30px; /* Mas bilog */
+            /* IMPROVED: Added transition for smooth effects */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        nav a:hover { 
+            background-color: rgba(255, 255, 255, 0.2); /* Light transparent hover background */
+            color: white; /* Panatilihin ang white text */
+            transform: translateY(-2px) scale(1.05); /* Slight lift and scale effect */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        /* Optional: Adding a subtle underline effect on hover */
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 80%;
+        }
 
-</ul>
+        /* ===== SECTIONS ===== */
+        section {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
 
-  </div>  
-</section>  <section id="Tutorials">  
-  <h2>Video Tutorials</h2>  
-  <div class="video-grid">  
-    <div class="video-item"><iframe src="https://www.youtube.com/embed/jQ1sfKIl50E"></iframe></div>  
-    <div class="video-item"><iframe src="https://www.youtube.com/embed/jzWxBuvwuwQ"></iframe></div>  
-    <div class="video-item"><iframe src="https://www.youtube.com/embed/qwNbjGyhZ48"></iframe></div>  
-  </div>  
-</section>  <section id="contact">  
-  <h2>Contact</h2>    <div class="contact-card">  <p>Want to collaborate or see more work?<br>Reach out via email or socials.</p>  
+        /* ===== PROFILE PICTURE ===== */
+        .profile-pic { display: flex; justify-content: center; }
+        .profile-pic img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #f06292;
+        }
 
-<div class="contact-box">  
-  <div class="contact-icon">✉️</div>  
-  <div class="contact-info">  
-    <b>Email:</b><br>  
-    <span>lenabahian@gmail.com</span>  
-  </div>  
-</div>  
+        /* ===== SKILLS SECTION (FINALIZED) ===== */
+        #Skills {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        .centered-skill-text {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        
+        .platform-title {
+            font-size: 22px; 
+            color: #ad1457;
+            font-weight: bold; 
+            text-align: center;
+            margin-top: 5px; 
+            margin-bottom: 0;
+            padding-bottom: 5px; 
+        }
 
-<div class="contact-box">  
-  <div class="contact-icon">🌐</div>  
-  <div class="contact-info">  
-    <b>GitHub:</b><br>  
-    <span>github.com/bahianlena613</span>  
-  </div>  
-</div>  
+        .platform-list-container {
+            background-color: #fff; 
+            padding: 10px 0 50px 0;
+            margin: 0; 
+            box-shadow: none; 
+            border-radius: 0;
+        }
+        
+        .platform-list {
+            display: flex;
+            justify-content: center;
+            gap: 15px; 
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 0 10px;
+        }
 
-<div class="contact-box">  
-  <div class="contact-icon">📘</div>  
-  <div class="contact-info">  
-    <b>Facebook:</b><br>  
-    <span>Lens Catacio Bahian</span>  
-  </div>  
-</div>  
+        .platform-item {
+            text-align: center;
+            background: transparent; 
+            padding: 0;
+            box-shadow: none;
+            flex-shrink: 0;
+        }
 
-<div class="contact-box">  
-  <div class="contact-icon">📞</div>  
-  <div class="contact-info">  
-    <b>Phone:</b><br>  
-    <span>+63 992 313 4253</span>  
-  </div>  
-</div>  
+        .platform-icon-wrapper {
+            background-color: #fce4ec; 
+            padding: 5px; 
+            border-radius: 12px; 
+            display: inline-block;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+        }
 
-<button class="work-btn">Work With Me</button>
+        .platform-item img {
+            width: 60px; 
+            height: 60px;
+            border-radius: 8px; 
+            object-fit: cover;
+            box-shadow: none; 
+        }
 
-  </div>  
-</section>  <footer>  
-  <p>© 2025 <b>Bahi-an Portfolio</b> | BSIT-2B</p>  
-</footer>  </body>  
-</html>
+        .platform-item p {
+            font-size: 13px; 
+            margin-top: 6px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        /* ===== PROJECTS / OUTPUTS STYLES ===== */
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+        .project-item {
+            text-align: center;
+            background-color: #fce4ec;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .project-item img {
+            width: 280px;
+            height: 190px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        /* ===== OTHER OUTPUTS ===== */
+        .other-outputs { text-align: center; margin-top: 20px; }
+        .output-list { list-style: none; padding: 0; margin-top: 20px; }
+        .output-list li {
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+        .output-icon { font-size: 20px; }
+
+        /* ===== VIDEOS ===== */
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .video-item iframe {
+            width: 320px;
+            height: 180px;
+            border-radius: 20px;
+        }
+
+        /* ===== CONTACT SECTION (FINALIZED) ===== */
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .contact-card p {
+            text-align: center;
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 25px;
+        }
+        .contact-box {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: #f48fb1;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-size: 22px;
+        }
+        .contact-info b { font-size: 17px; }
+        .work-btn {
+            display: block;
+            margin: 25px auto 0;
+            background: #ec407a;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 18px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+        }
+        .work-btn:hover { background: #d81b60; }
+        footer { text-align: center; padding: 20px; background: #f8bbd0; }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#Skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#Tutorials">Tutorials</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home">
+    <div class="profile-pic"><img src="Cn.png" alt="Profile Picture"></div>
+    <h2>Welcome to My Portfolio!</h2>
+    <p style="text-align:center;">
+        Crafting innovative solutions through design, code, and creativity.
+        Welcome to a space where ideas turn into experience —
+        a journey of learning, building, and growing.
+    </p>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I’m an Information Technology student with a passion for coding, problem-solving,
+        and learning about emerging technologies. I’m currently building my skills in software
+        development, web design, and cybersecurity. My goal is to grow as an IT professional
+        and contribute to innovative tech projects that make an impact.
+    </p>
+</section>
+
+<section id="Skills">
+    <h2>Skills & Tools</h2>
+    <div class="centered-skill-text">
+        <p>
+            🎬 Video & Photo Editing<br>
+            🖌️ Canva, Figma, Photoshop, Premiere
+        </p>
+    </div>
+
+    <div class="platform-title">
+        Some Platforms I've been Used
+    </div>
+    
+    <div class="platform-list-container">
+        <div class="platform-list">
+            <div class="platform-item">
+                <div class="platform-icon-wrapper">
+                    <img src="Addob.png" alt="Adobe Premiere">
+                </div>
+                <p>Premiere</p>
+            </div>
+            <div class="platform-item">
+                <div class="platform-icon-wrapper">
+                    <img src="Fig.png" alt="Figma">
+                </div>
+                <p>Figma</p>
+            </div>
+            <div class="platform-item">
+                <div class="platform-icon-wrapper">
+                    <img src="Add.png" alt="Adobe Photoshop">
+                </div>
+                <p>Photoshop</p>
+            </div>
+             <div class="platform-item">
+                <div class="platform-icon-wrapper">
+                    <img src="Canv.png" alt="Canva">
+                </div>
+                <p>Canva</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="projects">
+    <h2>Outputs</h2>
+    <div class="project-grid">
+        <div class="project-item"><img src="Ss.jpg" alt="Banner"><p>Banner</p></div>
+        <div class="project-item"><img src="Ts.png" alt="T-Shirt Layout"><p>T-Shirt Layout</p></div>
+        <div class="project-item"><img src="Sh.png" alt="Chessboard"><p>Chessboard</p></div>
+    </div>
+
+    <h2>Other Outputs:</h2>
+    <div class="other-outputs">
+        <ul class="output-list">
+            <li><span class="output-icon">📄</span> Canva Portfolio — <a href="#">Click Here</a></li>
+            <li><span class="output-icon">💻</span> Figma Portfolio — <a href="#">Click Here</a></li>
+            <li><span class="output-icon">🛒</span> Figma E-commerce — <a href="#">Click Here</a></li>
+        </ul>
+    </div>
+</section>
+
+<section id="Tutorials">
+    <h2>Video Tutorials</h2>
+    <div class="video-grid">
+        <div class="video-item"><iframe src="https://www.youtube.com/embed/jQ1sfKIl50E" alt = "error"></iframe></div>
+        <div class="video-item"><iframe src="https://www.youtube.com/embed/jzWxBuvwuwQ" alt = "error"></iframe></div>
+        <div class="video-item"><iframe src="https://www.youtube.com/embed/qwNbjGyhZ48" alt = "error"></iframe></div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-card">
+        <p>Want to collaborate or see more work?<br>Reach out via email or socials.</p>
+        <div class="contact-box">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-info"><b>Email:</b><br>lenabahian@gmail.com</div>
+        </div>
+        <div class="contact-box">
+            <div class="contact-icon">🌐</div>
+            <div class="contact-info"><b>GitHub:</b><br>github.com/bahianlena613</div>
+        </div>
+        <div class="contact-box">
+            <div class="contact-icon">📘</div>
+            <div class="contact-info"><b>Facebook:</b><br>Lens Catacio Bahian</div>
+        </div>
+        <div class="contact-box">
+            <div class="contact-icon">📞</div>
+            <div class="contact-info"><b>Phone:</b><br>+63 992 313 4253</div>
+        </div>
+        <button class="work-btn">Work With Me</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 <b>Bahi-an Portfolio</b> | BSIT-2B</p>
+</footer>
+
+</body>
+  </html>
