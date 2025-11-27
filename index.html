@@ -199,17 +199,32 @@
         }
         .output-icon { font-size: 20px; }
 
-        /* ===== VIDEOS ===== */
+        /* ===== VIDEOS (IMPROVED SPACING) ===== */
         .video-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
+        
+        /* NEW STYLE: Container for video and text */
+        .video-wrapper {
+            text-align: center;
+            /* Ensures wrapper has same gap as other flex items */
+        }
+
         .video-item iframe {
             width: 320px;
             height: 180px;
             border-radius: 20px;
+            display: block; /* Important para hindi mag-margin ang iframe */
+            margin-bottom: 5px; /* Konting espasyo sa pagitan ng video at text */
+        }
+        
+        .video-wrapper p {
+            margin-top: 0;
+            font-weight: 600;
+            color: #555;
         }
 
         /* ===== CONTACT SECTION (FINALIZED) ===== */
@@ -360,9 +375,26 @@
 <section id="Tutorials">
     <h2>Video Tutorials</h2>
     <div class="video-grid">
-        <div class="video-item"><iframe src="https://www.youtube.com/embed/jQ1sfKIl50E" alt = "error"></iframe></div>
-        <div class="video-item"><iframe src="https://www.youtube.com/embed/jzWxBuvwuwQ" alt = "error"></iframe></div>
-        <div class="video-item"><iframe src="https://www.youtube.com/embed/qwNbjGyhZ48" alt = "error"></iframe></div>
+        <div class="video-wrapper">
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/jQ1sfKIl50E" alt = "error"></iframe>
+            </div>
+            <p>Figma Tutorial</p>
+        </div>
+        
+        <div class="video-wrapper">
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/jzWxBuvwuwQ" alt = "error"></iframe>
+            </div>
+            <p>Canva Tutorial</p>
+        </div>
+        
+        <div class="video-wrapper">
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/qwNbjGyhZ48" alt = "error"></iframe>
+            </div>
+            <p>Photoshop Tutorial</p>
+        </div>
     </div>
 </section>
 
@@ -395,4 +427,4 @@
 </footer>
 
 </body>
-  </html>
+    </html>
